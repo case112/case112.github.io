@@ -1,0 +1,15 @@
+# docker run --rm --volume="$PWD:/srv/jekyll" -p 4000:4000 jekyll/jekyll:4.0 jekyll serve
+
+# start up container: docker-compose up
+# stopping: docker-compose stop
+# taking down: docker-compose down
+
+version: '3'
+services:
+  jekyll-serve:
+    image: jekyll/jekyll:4.0
+    volumes:
+      - '.:/srv/jekyll'
+    ports:
+      - 4000:4000
+    command: 'jekyll serve'
